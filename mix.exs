@@ -46,7 +46,8 @@ defmodule Chpter.MixProject do
     [
       {:poison, "~> 5.0"},
       {:timex, "~> 3.0"},
-      {:httpoison, "~> 2.1"}
+      {:httpoison, "~> 2.1"},
+      {:ex_doc, "~> 0.27", only: :dev, runtime: false}
     ]
   end
 end

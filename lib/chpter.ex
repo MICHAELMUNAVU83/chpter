@@ -1,4 +1,7 @@
 defmodule Chpter do
+  @moduledoc """
+  Documentation for `Chpter`.
+  """
   def initiate_payment(
         api_key,
         phone_number,
@@ -41,6 +44,8 @@ defmodule Chpter do
       }
     ]
   end
+
+  @doc false
 
   defp body(
          phone_number,

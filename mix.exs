@@ -4,23 +4,14 @@ defmodule Chpter.MixProject do
   def project do
     [
       app: :chpter,
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
       description:
         "This is wrapper for Chpter API that you can use to integrate Mpesa payments in your Elixir application.",
       deps: deps(),
       package: package(),
-      name: "Chpter",
-      source_url: "https://github.com/manuelgeek/mpesa_elixir.git",
-      homepage_url: "https://hexdocs.pm/mpesa/Mpesa.html",
-      docs: [
-        # The main page in the docs
-        main: "Mpesa",
-        # logo:
-        #   "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/M-PESA_LOGO-01.svg/1200px-M-PESA_LOGO-01.svg.png",
-        extras: ["README.md"]
-      ]
+      name: "Chpter"
     ]
   end
 

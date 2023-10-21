@@ -10,7 +10,7 @@ by adding `chpter` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:chpter, "~> 0.1.0"}
+    {:chpter, "~> 0.1.1"}
   ]
 end
 ```
@@ -61,12 +61,12 @@ There is a function called `check_for_payment` that takes in the following param
 
 ## Documentation
 
-[https://hexdocs.pm/mpesa](https://hexdocs.pm/mpesa/Mpesa.html).
+[Hex Docs](https://hexdocs.pm/chpter/0.1.1/Chpter.html)
 
-## AUthor
+## AUuhor
 
 [Michael Munavu](https://michaelmunavu.com)
 
-## Licence
+## License
 
 Chpter is released under [MIT License](https://github.com/appcues/exsentry/blob/master/LICENSE.txt)

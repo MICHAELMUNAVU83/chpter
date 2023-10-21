@@ -37,11 +37,14 @@ There is a function called `initiate_payment` that takes in the following parame
  iex> Chpter.initiate_payment(
          "pk_4aff02227456f6b499820c2621ae181c9e35666d25865575fef47622265dcbb9",
           "254740769596",
-         "Michael Munavu",
-         "michaelmunavu83@gmail.com",
-           1,
-        "https://720a-102-135-173-116.ngrok-free.app/api/transactions",
-         "123456")
+     "Michael Munavu",
+      "michaelmunavu83@gmail.com",
+      1,
+     "Nairobi",
+      "https://720a-102-135-173-116.ngrok-free.app/api/transactions",
+      "transaction_123456"
+
+      )
 
 ```
 

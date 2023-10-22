@@ -63,11 +63,21 @@ There is a function called `check_for_payment` that takes in the following param
 
 ```
 
-## Documentation
+## Creating A Callback url endpoint to use with chpter in elixir
+
+[Medium Article](https://medium.com/@michaelmunavu83/creating-a-callback-url-endpoint-for-chpter-api-with-elixir-4c9a5ca44f43)
+[Github Repository](https://github.com/MICHAELMUNAVU83/chpter_callback_url)
+
+## Implimenting Chpter in your Phoenix LiveView Article and Repository.
+
+[Medium Article](https://medium.com/@michaelmunavu83/using-chpter-api-for-mpesa-payments-in-elixir-and-phoenix-live-view-9406ac4d1039)
+[Github Repository](https://github.com/MICHAELMUNAVU83/chpter_phoenix)
+
+## Hex Documentation
 
 [Hex Docs](https://hexdocs.pm/chpter/0.1.1/Chpter.html)
 
-## AUuhor
+## Author
 
 [Michael Munavu](https://michaelmunavu.com)
 

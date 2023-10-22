@@ -20,8 +20,8 @@ defmodule Chpter.MixProject do
       maintainers: ["Michael Munavu"],
       licenses: ["MIT"],
       links: %{
+        "Online Documentation" => "https://hexdocs.pm/chpter/0.1.1/Chpter.html",
         "GitHub" => "https://github.com/MICHAELMUNAVU83/chpter",
-        "Documentation" => "https://hexdocs.pm/chpter/0.1.1/Chpter.html",
         "Owner Portfolio" => "https://michaelmunavu.com"
       }
     ]

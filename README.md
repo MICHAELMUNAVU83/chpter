@@ -57,8 +57,9 @@ There is a function called `check_for_payment` that takes in the following param
 
 ```elixir
  iex> Chpter.check_for_payment(
+  "123456",
          "https://api.chpter.co/v1/transactions",
-         "123456")
+         )
 
 ```
 

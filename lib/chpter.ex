@@ -2,6 +2,43 @@ defmodule Chpter do
   @moduledoc """
   Documentation for `Chpter`.
   """
+
+  @doc """
+  Initiates the Stk Push request to USing Chpter API
+
+  This function takes in the following parameters:
+
+  - `api_key` - Your Chpter API key
+  - `phone_number` - The phone number to send the payment request to
+  - `name` - The name of the person to send the payment request to
+  - `email` - The email of the person to send the payment request to
+  - `amount` - The amount to be paid
+  - `callback_url` - The callback url to be used by Chpter to send the payment request response to
+  - `transaction_reference` - The reference to be used for the payment request
+
+  ```
+
+
+  Replace the api_key with your Chpter API key , the phone number with the phone number to send the payment request to, the name with the name of the person to send the payment request to, the email with the email of the person to send the payment request to, the amount with the amount to be paid, the callback_url with the callback url to be used by Chpter to send the payment request response to and the transaction_reference with the reference to be used for the payment request.
+
+
+
+
+  ## Examples
+
+       iex> Chpter.initiate_payment(
+         "pk_4aff02227456f6b499820c2621ae181c9e35666d25865575fef47622265dcbb9",
+          "254740769596",
+         "Michael Munavu",
+         "michaelmunavu83@gmail.com",
+         1,
+         "Nairobi",
+         "https://720a-102-135-173-116.ngrok-free.app/api/transactions",
+          "transaction_123456"
+
+      )
+
+  """
   def initiate_payment(
         api_key,
         phone_number,
@@ -32,6 +69,15 @@ defmodule Chpter do
     HTTPoison.post(url, request_body, header)
   end
 
+  @doc """
+  This is the header for the Chpter API request
+  This function takes an api_key as a parameter
+
+  ```
+  Replace the `api_key` with your Chpter API key
+  ```
+  """
+
   defp header(api_key) do
     [
       {
@@ -45,7 +91,19 @@ defmodule Chpter do
     ]
   end
 
-  @doc false
+  @doc """
+  This is the body for the Chpter API request
+  This function takes the following parameters:
+  - `phone_number` - The phone number to send the payment request to
+  - `name` - The name of the person to send the payment request to
+  - `email` - The email of the person to send the payment request to
+  - `amount` - The amount to be paid
+  - `callback_url` - The callback url to be used by Chpter to send the payment request response to
+  - `transaction_reference` - The reference to be used for the payment request
+
+
+
+  """
 
   defp body(
          phone_number,
@@ -76,6 +134,36 @@ defmodule Chpter do
       }
     }
   end
+
+  @doc """
+
+  This function checks for the payment status from the Chpter API
+  This is a recursive function that takes the following parameters:
+  - `transaction_reference` - The reference to be used for the payment request
+
+  - `api_endpoint` - The Chpter API endpoint where all the transactions are stored
+
+  ```
+
+  Replace the `transaction_reference` with the reference to be used for the payment request
+   and the `api_endpoint` with the endpoint to be used to check for the payment status
+
+
+  Replace the api_key with your Chpter API key , the phone number with the phone number
+   to send the payment request to, the name with the name of the person to send the payment request to,
+   the email with the email of the person to send the payment request to, the amount with the amount to be paid,
+   the callback_url with the callback url to be used by Chpter to send the payment request response to and the transaction_reference
+    with the reference to be used for the payment request.
+
+
+
+
+  ## Examples
+
+       iex> Chpter.check_for_payment("transaction_123456", "https://api.chpter.co/v1/transactions")
+
+  ```
+  """
 
   def check_for_payment(transaction_reference, api_endpoint) do
     body = HTTPoison.get!(api_endpoint)

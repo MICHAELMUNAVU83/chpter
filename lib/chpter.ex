@@ -181,4 +181,101 @@ defmodule Chpter do
       check_for_payment(transaction_reference, api_endpoint)
     end
   end
+
+  @doc """
+
+  This function allows you to withdraw money from a Chpter account to a mobile wallet , in this case mpesa.
+  This function takes the following parameters:
+  - `name` - The name of the person to send the payment request to
+  - `email` - The email of the person to send the payment request to
+  - `phone_number` - The phone number to send the payment request to
+  - `amount` - The amount to be paid as an integer
+  - `callback_url` - The callback url to be used by Chpter to send the payment request response to
+  - `payout_reference` - The reference to be used for the payment request
+  - `api_key` - Your Chpter API key
+
+
+
+  ```
+
+  Replace the `payout_reference` with the reference to be used for the payment request
+   and the `callback_url` with the url that chpter will send the response to .
+
+   A successful response will be as follows:
+
+   ```
+   {
+    "message": "Success",
+    "success": true,
+    "status": 200,
+    "amount": 100,
+    "currency": "KES",
+    "payout_reference": "ABCD123",
+  }
+    ```
+
+    A failed response will be as follows:
+
+    ```
+    {
+    "message": "Payout failed contact support@chpter.co",
+    "success": false,
+    "status": 200,
+    "payout_reference": "ABCD123",
+  }
+    ```
+    Replace the api_key with your Chpter API key for the account you want to withdraw from .
+    The amount is an integer and has to be a minimum of 20  KES .
+
+
+  ## Examples
+
+       iex> Chpter.withdraw(
+         "Michael Munavu",
+         "michaelmunavu83@gmail.com",
+         "254740769596",
+         25,
+          "https://720a-102-135-173-116.ngrok-free.app/api/transactions",
+          "ABCD123",
+          "pk_4aff02227456f6b499820c2621ae181c9e35666d25865575fef47622265dcbb9"
+      )
+
+
+  ```
+  """
+
+  def withdraw(name, email, phone_number, amount, callback_url, payout_reference, api_key) do
+    header = header(api_key)
+    url = "https://api.chpter.co/v1/payout/mobile-wallet"
+
+    body = withdrawal_body(name, email, phone_number, amount, callback_url, payout_reference)
+
+    request_body = Poison.encode!(body)
+
+    HTTPoison.post(url, request_body, header)
+  end
+
+  defp withdrawal_body(name, email, phone_number, amount, callback_url, payout_reference) do
+    %{
+      client_details: %{
+        "full_name" => name,
+        "phone_number" => phone_number,
+        "email" => email
+      },
+      destination_details: %{
+        "country_code" => "KE",
+        "mobile_number" => phone_number,
+        "wallet_type" => "mpesa"
+      },
+      transfer_details: %{
+        "currency_code" => "KES",
+        "amount" => amount
+      },
+      callback_details: %{
+        "notify_customer" => true,
+        "payout_reference" => payout_reference,
+        "callback_url" => callback_url
+      }
+    }
+  end
 end

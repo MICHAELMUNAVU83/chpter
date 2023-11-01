@@ -203,7 +203,7 @@ defmodule Chpter do
 
    A successful response will be as follows:
 
-   ```
+
    {
     "message": "Success",
     "success": true,
@@ -212,18 +212,17 @@ defmodule Chpter do
     "currency": "KES",
     "payout_reference": "ABCD123",
   }
-    ```
 
     A failed response will be as follows:
 
-    ```
+
     {
     "message": "Payout failed contact support@chpter.co",
     "success": false,
     "status": 200,
     "payout_reference": "ABCD123",
   }
-    ```
+
     Replace the api_key with your Chpter API key for the account you want to withdraw from .
     The amount is an integer and has to be a minimum of 20  KES .
 

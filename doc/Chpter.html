@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-EPF2X7PV.js"></script>
-    <script src="dist/sidebar_items-1CDDFD3A.js"></script>
+    <script src="dist/sidebar_items-08A5FE2E.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -155,6 +155,17 @@ This is a recursive function that takes the following parameters</p></div>
 
     </div>
 
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#withdraw/7" translate="no">withdraw(name, email, phone_number, amount, callback_url, payout_reference, api_key)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>This function allows you to withdraw money from a Chpter account to a mobile wallet , in this case mpesa.
+This function takes the following parameters</p></div>
+
+    </div>
+
 </div>
 
   </section>
@@ -199,7 +210,7 @@ This is a recursive function that takes the following parameters:</p><ul><li><p>
 
 </span><span class="c1">## Examples</span><span class="w">
 
-     </span><span class="gp unselectable">iex&gt; </span><span class="nc">Chpter</span><span class="o">.</span><span class="n">check_for_payment</span><span class="p" data-group-id="4084986996-1">(</span><span class="s">&quot;transaction_123456&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;https://api.chpter.co/v1/transactions&quot;</span><span class="p" data-group-id="4084986996-1">)</span><span class="w">
+     </span><span class="gp unselectable">iex&gt; </span><span class="nc">Chpter</span><span class="o">.</span><span class="n">check_for_payment</span><span class="p" data-group-id="4161187557-1">(</span><span class="s">&quot;transaction_123456&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;https://api.chpter.co/v1/transactions&quot;</span><span class="p" data-group-id="4161187557-1">)</span><span class="w">
 </span></code></pre>
   </section>
 </section>
@@ -226,7 +237,7 @@ This is a recursive function that takes the following parameters:</p><ul><li><p>
 
 </span><span class="c1">## Examples</span><span class="w">
 
-     </span><span class="gp unselectable">iex&gt; </span><span class="nc">Chpter</span><span class="o">.</span><span class="n">initiate_payment</span><span class="p" data-group-id="0428932430-1">(</span><span class="w">
+     </span><span class="gp unselectable">iex&gt; </span><span class="nc">Chpter</span><span class="o">.</span><span class="n">initiate_payment</span><span class="p" data-group-id="8586514999-1">(</span><span class="w">
        </span><span class="s">&quot;pk_4aff02227456f6b499820c2621ae181c9e35666d25865575fef47622265dcbb9&quot;</span><span class="p">,</span><span class="w">
         </span><span class="s">&quot;254740769596&quot;</span><span class="p">,</span><span class="w">
        </span><span class="s">&quot;Michael Munavu&quot;</span><span class="p">,</span><span class="w">
@@ -236,7 +247,60 @@ This is a recursive function that takes the following parameters:</p><ul><li><p>
        </span><span class="s">&quot;https://720a-102-135-173-116.ngrok-free.app/api/transactions&quot;</span><span class="p">,</span><span class="w">
         </span><span class="s">&quot;transaction_123456&quot;</span><span class="w">
 
-    </span><span class="p" data-group-id="0428932430-1">)</span></code></pre>
+    </span><span class="p" data-group-id="8586514999-1">)</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="withdraw/7">
+
+  <div class="detail-header">
+    <a href="#withdraw/7" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">withdraw(name, email, phone_number, amount, callback_url, payout_reference, api_key)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>This function allows you to withdraw money from a Chpter account to a mobile wallet , in this case mpesa.
+This function takes the following parameters:</p><ul><li><code class="inline">name</code> - The name of the person to send the payment request to</li><li><code class="inline">email</code> - The email of the person to send the payment request to</li><li><code class="inline">phone_number</code> - The phone number to send the payment request to</li><li><code class="inline">amount</code> - The amount to be paid as an integer</li><li><code class="inline">callback_url</code> - The callback url to be used by Chpter to send the payment request response to</li><li><code class="inline">payout_reference</code> - The reference to be used for the payment request</li><li><code class="inline">api_key</code> - Your Chpter API key</li></ul><pre><code class="makeup elixir" translate="no"><span class="w">
+</span><span class="nc">Replace</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="err">`</span><span class="n">payout_reference</span><span class="err">`</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">reference</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">used</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">payment</span><span class="w"> </span><span class="n">request</span><span class="w">
+ </span><span class="ow">and</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="err">`</span><span class="n">callback_url</span><span class="err">`</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">chpter</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">send</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="o">.</span><span class="w">
+
+ </span><span class="nc">A</span><span class="w"> </span><span class="n">successful</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="ss">follows</span><span class="p">:</span><span class="w">
+</span></code></pre><p> {
+  &quot;message&quot;: &quot;Success&quot;,
+  &quot;success&quot;: true,
+  &quot;status&quot;: 200,
+  &quot;amount&quot;: 100,
+  &quot;currency&quot;: &quot;KES&quot;,
+  &quot;payout_reference&quot;: &quot;ABCD123&quot;,
+}</p><pre><code class="makeup elixir" translate="no"><span class="w">
+  </span><span class="nc">A</span><span class="w"> </span><span class="n">failed</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="ss">follows</span><span class="p">:</span><span class="w">
+</span></code></pre><p>  {
+  &quot;message&quot;: &quot;Payout failed contact support@chpter.co&quot;,
+  &quot;success&quot;: false,
+  &quot;status&quot;: 200,
+  &quot;payout_reference&quot;: &quot;ABCD123&quot;,
+}</p><pre><code class="makeup elixir" translate="no"><span class="w">  </span><span class="nc">Replace</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">api_key</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="nc">Chpter</span><span class="w"> </span><span class="nc">API</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">want</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">withdraw</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="o">.</span><span class="w">
+  </span><span class="nc">The</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">minimum</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="mi">20</span><span class="w">  </span><span class="nc">KES</span><span class="w"> </span><span class="o">.</span><span class="w">
+
+
+</span><span class="c1">## Examples</span><span class="w">
+
+     </span><span class="gp unselectable">iex&gt; </span><span class="nc">Chpter</span><span class="o">.</span><span class="n">withdraw</span><span class="p" data-group-id="3946186910-1">(</span><span class="w">
+       </span><span class="s">&quot;Michael Munavu&quot;</span><span class="p">,</span><span class="w">
+       </span><span class="s">&quot;michaelmunavu83@gmail.com&quot;</span><span class="p">,</span><span class="w">
+       </span><span class="s">&quot;254740769596&quot;</span><span class="p">,</span><span class="w">
+       </span><span class="mi">25</span><span class="p">,</span><span class="w">
+        </span><span class="s">&quot;https://720a-102-135-173-116.ngrok-free.app/api/transactions&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s">&quot;ABCD123&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s">&quot;pk_4aff02227456f6b499820c2621ae181c9e35666d25865575fef47622265dcbb9&quot;</span><span class="w">
+    </span><span class="p" data-group-id="3946186910-1">)</span><span class="w">
+
+</span></code></pre>
   </section>
 </section>
 
